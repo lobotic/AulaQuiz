@@ -1,0 +1,259 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#f2f4f7;
+    color:#222;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+/* ---------- REGISTRO ---------- */
+
+#registro{
+
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+}
+
+#registro h1{
+
+    text-align:center;
+    color:#1976d2;
+    margin-bottom:10px;
+
+}
+
+#registro h2{
+
+    text-align:center;
+    color:#666;
+    font-weight:normal;
+    margin-bottom:30px;
+
+}
+
+#registro input{
+
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    font-size:1.2rem;
+    border:2px solid #bbb;
+    border-radius:12px;
+
+}
+
+#entrar{
+
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:#1976d2;
+    color:white;
+    font-size:1.3rem;
+    cursor:pointer;
+
+}
+
+#estado{
+
+    text-align:center;
+    margin-top:20px;
+    font-weight:bold;
+
+}
+
+/* ---------- JUEGO ---------- */
+
+#juego{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+.tarjetaPregunta{
+
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    margin-bottom:30px;
+
+}
+
+#pregunta{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.opcion{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #e6e6e6;
+
+    font-size:1.25rem;
+
+}
+
+.opcion:last-child{
+
+    border-bottom:none;
+
+}
+
+.letra{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#1976d2;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    flex-shrink:0;
+
+}
+
+.botonera{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.respuesta{
+
+    height:120px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:3rem;
+
+    font-weight:bold;
+
+    background:#d7d7d7;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+.respuesta:hover{
+
+    background:#c6c6c6;
+
+}
+
+.respuesta.activa{
+
+    background:#2e7d32;
+
+    color:white;
+
+}
+
+.respuesta:disabled{
+
+    background:#999;
+
+    color:white;
+
+}
+
+#enviar{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#1976d2;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+}
+
+#enviar:disabled{
+
+    background:#999;
+
+    cursor:not-allowed;
+
+}
+
+#estadoJuego{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+}
+
+@media (max-width:700px){
+
+    .respuesta{
+
+        height:100px;
+
+        font-size:2.4rem;
+
+    }
+
+}

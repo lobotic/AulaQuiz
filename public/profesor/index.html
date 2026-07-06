@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>AulaQuiz - Profesor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+
+<body>
+
+    <h1>AulaQuiz</h1>
+
+    <div class="panel">
+
+        <div>
+
+            <label for="cuestionario">
+                Cuestionario
+            </label>
+
+            <br>
+
+            <select id="cuestionario">
+
+                <option value="">
+                    -- Selecciona --
+                </option>
+
+            </select>
+
+        </div>
+
+        <button id="comenzar">
+
+            🚀 Comenzar
+
+        </button>
+
+        <button id="siguiente">
+
+            ➜ Siguiente
+
+        </button>
+
+    </div>
+
+    <hr>
+
+    <h2>Alumnado conectado</h2>
+
+    <table id="tablaAlumnos">
+
+        <thead>
+
+            <tr>
+
+                <th>Nº</th>
+
+                <th>Nombre</th>
+
+                <th>Estado</th>
+
+                <th>Puntos</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="lista">
+
+        </tbody>
+
+    </table>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

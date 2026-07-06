@@ -6,6 +6,7 @@ El profesor controla la partida desde su ordenador, los alumnos responden desde 
 
 ---
 
+
 ## Características
 
 - Registro de alumnos mediante código QR.
@@ -26,7 +27,7 @@ El profesor controla la partida desde su ordenador, los alumnos responden desde 
 
 ---
 
-# Tecnologías
+# El proyecto usa
 
 - Node.js
 - Express
@@ -38,7 +39,20 @@ El profesor controla la partida desde su ordenador, los alumnos responden desde 
 - JavaScript
 
 ---
+# Requisitos
 
+Antes de ejecutar AulaQuiz necesitas tener instalado:
+
+- Node.js 18 o superior (recomendado)
+- npm (incluido con Node.js)
+
+Comprobar la instalación:
+
+```bash
+node --version
+npm --version
+```
+---
 # Instalación
 
 Clonar el repositorio:

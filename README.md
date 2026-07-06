@@ -1,62 +1,54 @@
 # AulaQuiz
 
-**AulaQuiz** es una aplicación web de código abierto para realizar cuestionarios interactivos en el aula utilizando la red local del centro, sin necesidad de conexión a Internet.
+Aplicación web para realizar cuestionarios interactivos en el aula mediante una red local.
 
-El proyecto está pensado para funcionar en entornos educativos como MAX (Madrid_Linux), Ubuntu y cualquier sistema capaz de ejecutar Node.js.
-
----
-
-## Objetivos
-
-- 100 % software libre.
-- Funcionamiento íntegro en la red local.
-- Sin depender de servicios externos.
-- Compatible con ordenadores, tablets y móviles.
-- Pensado para el profesorado.
+El profesor controla la partida desde su ordenador, los alumnos responden desde cualquier dispositivo móvil mediante un código QR y una pantalla principal muestra en tiempo real el desarrollo del cuestionario.
 
 ---
 
-## Tecnologías
+## Características
+
+- Registro de alumnos mediante código QR.
+- Selección de cuestionarios en formato JSON.
+- Preguntas de opción múltiple.
+- Respuestas en tiempo real mediante Socket.IO.
+- Pantalla de proyección para el aula.
+- Contador visual por pregunta.
+- Estado de respuesta de cada alumno.
+- Corrección automática.
+- Cálculo de notas.
+- Exportación automática al finalizar la partida.
+- Generación de:
+  - `resumen.csv`
+  - `resultados.csv`
+  - `estadisticas.csv`
+  - `informe.html` listo para imprimir o guardar como PDF.
+
+---
+
+# Tecnologías
 
 - Node.js
 - Express
 - Socket.IO
+- QRCode
+- QRCode Terminal
 - HTML5
 - CSS3
 - JavaScript
 
 ---
 
-## Estructura del proyecto
+# Instalación
 
-```
-aulaquiz/
-│
-├── data/
-│   ├── configuracion.json
-│   ├── cuestionarios/
-│   └── resultados/
-│
-├── public/
-│   ├── alumno/
-│   ├── profesor/
-│   ├── pantalla/
-│   └── assets/
-│
-├── src/
-│
-├── package.json
-├── server.js
-└── README.md
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/TU_USUARIO/aulaquiz.git
+cd aulaquiz
 ```
 
----
-
-## Instalación
-
-Clonar el proyecto o descargar el código.
-
-Instalar las dependencias:
+Instalar dependencias:
 
 ```bash
 npm install
@@ -64,53 +56,111 @@ npm install
 
 ---
 
-## Ejecución
+# Dependencias
+
+El proyecto utiliza:
+
+```text
+express
+socket.io
+qrcode
+qrcode-terminal
+```
+
+Si fuese necesario instalarlas manualmente:
 
 ```bash
+npm install express socket.io qrcode qrcode-terminal
+
+
+# Ejecutar
+
+Iniciar el servidor:
+
+...
 node server.js
 ```
 
-El servidor mostrará automáticamente:
+Aparecerá algo parecido a:
 
-- Dirección IP local.
-- URL de acceso.
-- Código QR para que el alumnado pueda conectarse.
+```
+Alumno   : http://192.168.1.35:3000/alumno
+Profesor : http://192.168.1.35:3000/profesor
+Pantalla : http://192.168.1.35:3000/pantalla
+```
+
+También se mostrará un código QR en la terminal para acceder directamente desde los dispositivos de los alumnos.
+
+
+# Crear cuestionarios
+
+Los cuestionarios se guardan en:
+
+data/cuestionarios
+
+
+Cada cuestionario es un archivo JSON.
+
+Ejemplo:
+
+```json
+[
+  {
+    "pregunta": "¿Capital de Francia?",
+    "opciones": [
+      "Madrid",
+      "París",
+      "Roma",
+      "Lisboa"
+    ],
+    "correcta": 1
+  }
+]
+
+
+# Exportación
+
+Al finalizar una partida se crea automáticamente una carpeta en:
+
+data/resultados/
+
+
+Ejemplo:
+
+2026-07-06_20-30_Ciencias
+
+
+Dentro se generan:
+
+### resumen.csv
+
+Resumen de calificaciones.
+
+### resultados.csv
+
+Todas las respuestas de todos los alumnos.
+
+### estadisticas.csv
+
+Porcentaje de aciertos por pregunta.
+
+### informe.html
+
+Informe individual de cada alumno preparado para imprimir o guardar como PDF.
+
+Cada alumno comienza en una página independiente.
+
+
+
+# Requisitos
+
+- Node.js 18 o superior recomendado.
+- Todos los dispositivos deben estar conectados a la misma red local.
+
+
 
 ---
 
-## Estado del proyecto
+# Licencia
 
-Versión actual: **0.1**
-
-### Implementado
-
-- Servidor Express.
-- Comunicación mediante Socket.IO.
-- Registro de alumnado.
-- Acceso desde la red local.
-- Código QR automático.
-
-### En desarrollo
-
-- Gestión de partidas.
-- PIN de acceso.
-- Banco de cuestionarios.
-- Temporizador.
-- Sistema de puntuación.
-- Exportación de resultados.
-
----
-
-## Filosofía
-
-AulaQuiz pretende ser una alternativa libre a plataformas comerciales de cuestionarios, permitiendo que cualquier docente pueda utilizarla sin depender de Internet ni de servicios de terceros.
-
-Todos los datos permanecen bajo el control del profesorado.
-
----
-
-## Licencia
-
-Pendiente de decidir.
-
-Se recomienda utilizar la licencia **GPL v3**.
+ **GPL v3**.

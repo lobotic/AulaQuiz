@@ -71,13 +71,15 @@ Si fuese necesario instalarlas manualmente:
 
 ```bash
 npm install express socket.io qrcode qrcode-terminal
+```
 
+---
 
 # Ejecutar
 
 Iniciar el servidor:
 
-...
+```bash
 node server.js
 ```
 
@@ -91,13 +93,15 @@ Pantalla : http://192.168.1.35:3000/pantalla
 
 También se mostrará un código QR en la terminal para acceder directamente desde los dispositivos de los alumnos.
 
+---
 
 # Crear cuestionarios
 
 Los cuestionarios se guardan en:
 
+```
 data/cuestionarios
-
+```
 
 Cada cuestionario es un archivo JSON.
 
@@ -116,20 +120,23 @@ Ejemplo:
     "correcta": 1
   }
 ]
-npm install
 ```
+
+---
 
 # Exportación
 
 Al finalizar una partida se crea automáticamente una carpeta en:
 
+```
 data/resultados/
-
+```
 
 Ejemplo:
 
+```
 2026-07-06_20-30_Ciencias
-
+```
 
 Dentro se generan:
 
@@ -151,17 +158,30 @@ Informe individual de cada alumno preparado para imprimir o guardar como PDF.
 
 Cada alumno comienza en una página independiente.
 
-
+---
 
 # Requisitos
 
 - Node.js 18 o superior recomendado.
 - Todos los dispositivos deben estar conectados a la misma red local.
 
+---
 
+# Futuras mejoras
+
+- Temporizador automático desde el servidor.
+- Clasificación en directo.
+- Banco de preguntas.
+- Modo competición.
+- Sonidos.
+- Temas visuales.
+- Exportación directa a PDF.
+- Estadísticas avanzadas.
+- Instalador para Windows y Linux.
 
 ---
 
 # Licencia
+
 
  **GPL v3**.

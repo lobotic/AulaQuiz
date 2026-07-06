@@ -116,7 +116,8 @@ Ejemplo:
     "correcta": 1
   }
 ]
-
+npm install
+```
 
 # Exportación
 

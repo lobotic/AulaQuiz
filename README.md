@@ -167,19 +167,6 @@ Cada alumno comienza en una página independiente.
 
 ---
 
-# Futuras mejoras
-
-- Temporizador automático desde el servidor.
-- Clasificación en directo.
-- Banco de preguntas.
-- Modo competición.
-- Sonidos.
-- Temas visuales.
-- Exportación directa a PDF.
-- Estadísticas avanzadas.
-- Instalador para Windows y Linux.
-
----
 
 # Licencia
 

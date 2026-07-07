@@ -1,102 +1,121 @@
 const socket = io();
 
-const pantalla =
-    document.getElementById("pantalla");
+const espera = document.getElementById("espera");
+const juego = document.getElementById("juego");
+const fin = document.getElementById("fin");
+
+const qr = document.getElementById("qr");
+
+const numeroPregunta = document.getElementById("numeroPregunta");
+const pregunta = document.getElementById("pregunta");
+const opciones = document.getElementById("opciones");
+const alumnos = document.getElementById("alumnos");
+let tiempo = 20;
+let temporizador = null;
+
+// =====================
+// Cargar QR
+// =====================
+
+fetch("/qr")
+    .then(res => res.json())
+    .then(data => {
+
+        qr.src = data.qr;
+
+    });
+
+// =====================
+// Estado de la partida
+// =====================
 
 socket.on("estadoPartida", (game) => {
 
-    switch (game.estado) {
+    if (game.estado === "esperando") {
 
-        case "esperando":
+        espera.style.display = "flex";
+        juego.style.display = "none";
+        fin.style.display = "none";
 
-            mostrarEspera(game);
+    }
 
-            break;
+    if (game.estado === "jugando") {
 
-        case "jugando":
+        espera.style.display = "none";
+        juego.style.display = "flex";
+        fin.style.display = "none";
 
-            pantalla.innerHTML =
-                "<h1>Comienza el juego...</h1>";
+    }
 
-            break;
+    if (game.estado === "finalizada") {
 
-        case "finalizada":
-
-            pantalla.innerHTML =
-                "<h1>Juego terminado</h1>";
-
-            break;
+        espera.style.display = "none";
+        juego.style.display = "none";
+        fin.style.display = "flex";
 
     }
 
 });
 
-socket.on("listaAlumnos", alumnos => {
+// =====================
+// Nueva pregunta
+// =====================
 
-    const contador =
-        document.getElementById("contador");
+socket.on("nuevaPregunta", (p) => {
 
-    if (contador) {
+    clearInterval(temporizador);
 
-        contador.textContent =
-            alumnos.length;
+tiempo = 20;
+
+contador.textContent = tiempo;
+
+temporizador = setInterval(() => {
+
+    tiempo--;
+
+    contador.textContent = tiempo;
+
+    if (tiempo <= 0) {
+
+        clearInterval(temporizador);
 
     }
 
+}, 1000);
+    numeroPregunta.textContent = "Pregunta";
+
+    pregunta.textContent = p.pregunta;
+
+    opciones.innerHTML = "";
+
+    p.opciones.forEach((texto, i) => {
+
+        opciones.innerHTML += `
+            <div class="opcion">
+                ${String.fromCharCode(65 + i)}) ${texto}
+            </div>
+        `;
+
+    });
+
 });
 
-function mostrarEspera(game) {
+// =====================
+// Lista de alumnos
+// =====================
 
-    pantalla.innerHTML = `
+socket.on("listaAlumnos", (lista) => {
 
-<div class="espera">
+    alumnos.innerHTML = "";
 
-<h1>AulaQuiz</h1>
+    lista.forEach(a => {
 
-<div class="qr">
+        alumnos.innerHTML += `
+            <div class="alumno">
+                ${a.haRespondido ? "✅" : "⏳"} ${a.nombre}
+            </div>
+        `;
 
-QR
+    });
 
-</div>
-
-<div class="direccion">
-
-${window.location.origin}/alumno
-
-</div>
-
-<div class="info">
-
-<div>
-
-<b>Cuestionario</b>
-
-<br>
-
-${game.cuestionarioSeleccionado || "Sin seleccionar"}
-
-</div>
-
-<div>
-
-<b>Alumnado conectado</b>
-
-<br>
-
-<span id="contador">0</span>
-
-</div>
-
-</div>
-
-<p>
-
-Esperando al profesorado...
-
-</p>
-
-</div>
-
-`;
-
-}
+});

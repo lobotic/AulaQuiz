@@ -7,11 +7,13 @@
 
 body{
 
-    background:#f2f4f7;
-    color:#222;
+    background:#ffffff;
+    color:#111;
+
     max-width:900px;
     margin:auto;
-    padding:20px;
+
+    padding:30px;
 
 }
 
@@ -21,32 +23,56 @@ body{
 
 }
 
-/* ---------- REGISTRO ---------- */
+/* ==========================
+   CABECERA
+========================== */
 
-#registro{
+header{
 
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    text-align:center;
+
+    margin-bottom:30px;
 
 }
 
-#registro h1{
+#logo{
 
-    text-align:center;
-    color:#1976d2;
-    margin-bottom:10px;
+    width:260px;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* ==========================
+   REGISTRO
+========================== */
+
+#registro{
+
+    max-width:520px;
+
+    margin:30px auto;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    padding:35px;
 
 }
 
 #registro h2{
 
     text-align:center;
-    color:#666;
+
     font-weight:normal;
+
+    color:#555;
+
     margin-bottom:30px;
 
 }
@@ -54,40 +80,81 @@ body{
 #registro input{
 
     width:100%;
-    padding:18px;
-    margin-bottom:20px;
-    font-size:1.2rem;
-    border:2px solid #bbb;
-    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:1.1rem;
+
+}
+
+#registro input:focus{
+
+    outline:none;
+
+    border-color:#111;
+
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+button{
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.2s;
 
 }
 
 #entrar{
 
     width:100%;
-    padding:18px;
-    border:none;
-    border-radius:12px;
-    background:#1976d2;
+
+    padding:15px;
+
+    background:#111;
+
     color:white;
-    font-size:1.3rem;
-    cursor:pointer;
+
+    font-size:1.1rem;
+
+}
+
+#entrar:hover{
+
+    background:#333;
 
 }
 
 #estado{
 
-    text-align:center;
     margin-top:20px;
+
+    text-align:center;
+
     font-weight:bold;
 
 }
 
-/* ---------- JUEGO ---------- */
+/* ==========================
+   JUEGO
+========================== */
 
 #juego{
 
     max-width:900px;
+
     margin:auto;
 
 }
@@ -95,31 +162,40 @@ body{
 .tarjetaPregunta{
 
     background:white;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
-    margin-bottom:30px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    margin-bottom:25px;
 
 }
 
 #pregunta{
 
     text-align:center;
-    margin-bottom:25px;
+
+    margin-bottom:30px;
+
+    font-size:1.6rem;
 
 }
 
 .opcion{
 
     display:flex;
-    align-items:center;
-    gap:18px;
 
-    padding:15px 0;
+    align-items:flex-start;
 
-    border-bottom:1px solid #e6e6e6;
+    gap:15px;
 
-    font-size:1.25rem;
+    padding:16px 0;
+
+    border-bottom:1px solid #eee;
+
+    font-size:1.15rem;
 
 }
 
@@ -131,12 +207,13 @@ body{
 
 .letra{
 
-    width:42px;
-    height:42px;
+    width:38px;
+
+    height:38px;
 
     border-radius:50%;
 
-    background:#1976d2;
+    background:#111;
 
     color:white;
 
@@ -152,45 +229,45 @@ body{
 
 }
 
+/* ==========================
+   BOTONERA
+========================== */
+
 .botonera{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
 
-    gap:20px;
+    gap:18px;
 
 }
 
 .respuesta{
 
-    height:120px;
+    height:110px;
 
-    border:none;
+    background:#f2f2f2;
 
-    border-radius:18px;
-
-    font-size:3rem;
+    font-size:2.8rem;
 
     font-weight:bold;
 
-    background:#d7d7d7;
+    color:#111;
 
-    cursor:pointer;
-
-    transition:.15s;
+    border:1px solid #ddd;
 
 }
 
 .respuesta:hover{
 
-    background:#c6c6c6;
+    background:#e5e5e5;
 
 }
 
 .respuesta.activa{
 
-    background:#2e7d32;
+    background:#111;
 
     color:white;
 
@@ -198,11 +275,15 @@ body{
 
 .respuesta:disabled{
 
-    background:#999;
+    background:#cccccc;
 
-    color:white;
+    color:#666;
 
 }
+
+/* ==========================
+   ENVIAR
+========================== */
 
 #enviar{
 
@@ -210,29 +291,35 @@ body{
 
     margin-top:25px;
 
-    padding:18px;
+    padding:16px;
 
-    border:none;
-
-    border-radius:14px;
-
-    background:#1976d2;
+    background:#111;
 
     color:white;
 
-    font-size:1.4rem;
+    font-size:1.2rem;
 
-    cursor:pointer;
+}
+
+#enviar:hover:not(:disabled){
+
+    background:#333;
 
 }
 
 #enviar:disabled{
 
-    background:#999;
+    background:#bbb;
+
+    color:#666;
 
     cursor:not-allowed;
 
 }
+
+/* ==========================
+   ESTADO
+========================== */
 
 #estadoJuego{
 
@@ -240,19 +327,41 @@ body{
 
     text-align:center;
 
-    font-size:1.2rem;
+    font-size:1.1rem;
 
     font-weight:bold;
 
 }
 
+/* ==========================
+   MÓVIL
+========================== */
+
 @media (max-width:700px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    #logo{
+
+        width:220px;
+
+    }
+
+    #pregunta{
+
+        font-size:1.35rem;
+
+    }
 
     .respuesta{
 
-        height:100px;
+        height:90px;
 
-        font-size:2.4rem;
+        font-size:2.2rem;
 
     }
 

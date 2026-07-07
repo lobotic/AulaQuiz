@@ -1,130 +1,232 @@
 # AulaQuiz
 
-Aplicación web para realizar cuestionarios interactivos en el aula mediante una red local.
+## Manual de usuario
 
-El profesor controla la partida desde su ordenador, los alumnos responden desde cualquier dispositivo móvil mediante un código QR y una pantalla principal muestra en tiempo real el desarrollo del cuestionario.
+**Versión 1.0**
+
+Aplicación para realizar cuestionarios interactivos en el aula mediante la red local.
 
 ---
 
+# 1. Descripción
 
-## Características
+AulaQuiz es una aplicación que permite realizar cuestionarios tipo test de forma sencilla utilizando cualquier navegador web.
 
-- Registro de alumnos mediante código QR.
-- Selección de cuestionarios en formato JSON.
-- Preguntas de opción múltiple.
-- Respuestas en tiempo real mediante Socket.IO.
-- Pantalla de proyección para el aula.
-- Contador visual por pregunta.
-- Estado de respuesta de cada alumno.
+El profesorado controla la actividad desde su ordenador, mientras que el alumnado participa utilizando sus teléfonos móviles, tabletas o cualquier otro dispositivo conectado a la misma red local.
+
+No requiere conexión a Internet durante su utilización. Toda la información permanece en el ordenador del docente.
+
+Entre sus principales funciones destacan:
+
+- Cuestionarios con preguntas tipo test.
+- Acceso del alumnado mediante código QR.
+- Control de la actividad en tiempo real.
 - Corrección automática.
-- Cálculo de notas.
-- Exportación automática al finalizar la partida.
-- Generación de:
-  - `resumen.csv`
-  - `resultados.csv`
-  - `estadisticas.csv`
-  - `informe.html` listo para imprimir o guardar como PDF.
+- Exportación de informes individuales y generales.
+- Funcionamiento completamente local, sin servidores externos.
 
 ---
 
-# El proyecto usa
+# 2. Características
 
-- Node.js
-- Express
-- Socket.IO
-- QRCode
-- QRCode Terminal
-- HTML5
-- CSS3
-- JavaScript
-
----
-# Requisitos
-
-Antes de ejecutar AulaQuiz necesitas tener instalado:
-
-- Node.js 18 o superior (recomendado)
-- npm (incluido con Node.js)
-
-Comprobar la instalación:
-
-```bash
-node --version
-npm --version
-```
----
-# Instalación
-
-Clonar el repositorio:
-
-```bash
-git clone https://github.com/TU_USUARIO/aulaquiz.git
-cd aulaquiz
-```
-
-Instalar dependencias:
-
-```bash
-npm install
-```
+- Interfaz sencilla e intuitiva.
+- Compatible con cualquier navegador moderno.
+- No requiere instalar software en los dispositivos del alumnado.
+- Acceso mediante código QR.
+- Corrección automática.
+- Generación de informes.
+- Posibilidad de añadir nuevos cuestionarios simplemente copiando archivos JSON.
+- No necesita conexión a Internet una vez iniciada la aplicación.
 
 ---
 
-# Dependencias
+# 3. Requisitos
 
-El proyecto utiliza:
+Para utilizar AulaQuiz únicamente es necesario:
+
+- Un ordenador con Linux de 64 bits.
+- Un navegador web.
+- Todos los dispositivos conectados a la misma red local (Wi-Fi o cable).
+
+No es necesario instalar Node.js ni ninguna otra dependencia adicional.
+
+---
+
+# 4. Instalación
+
+La instalación de AulaQuiz solo es necesaria la primera vez.
+
+Una vez realizada, bastará con hacer doble clic sobre el acceso directo para iniciar la aplicación.
+
+## Paso 1. Descomprimir AulaQuiz
+
+Descargue el archivo comprimido de AulaQuiz.
+
+Haga doble clic sobre él y extraiga la carpeta **AulaQuiz** en el lugar que prefiera (por ejemplo, el Escritorio o la carpeta Documentos).
+
+Obtendrá una estructura similar a esta:
 
 ```text
-express
-socket.io
-qrcode
-qrcode-terminal
+AulaQuiz/
 ```
 
-Si fuese necesario instalarlas manualmente:
+## Paso 2. Abrir una terminal
+
+1. Abra la carpeta **AulaQuiz**.
+2. Haga clic con el botón derecho sobre una zona vacía.
+3. Seleccione **Abrir en un terminal**.
+
+Se abrirá una ventana negra con un cursor parpadeando.
+
+## Paso 3. Ejecutar AulaQuiz
+
+Escriba exactamente:
 
 ```bash
-npm install express socket.io qrcode qrcode-terminal
+./AulaQuiz
+```
+
+y pulse **Intro**.
+
+Es importante escribir los caracteres `./` delante de `AulaQuiz`.
+
+La primera vez aparecerá un mensaje indicando que se ha creado un acceso directo.
+
+También se abrirán automáticamente:
+
+- la página del profesor;
+- la pantalla principal del cuestionario.
+
+## Paso 4. Cerrar AulaQuiz
+
+Cuando termine de utilizar la aplicación, cierre la ventana de la terminal.
+
+Al cerrarla, AulaQuiz finalizará automáticamente.
+
+## Paso 5. Utilizar el acceso directo
+
+Después de la primera ejecución aparecerá un nuevo archivo llamado:
+
+```text
+Iniciar AulaQuiz.desktop
+```
+
+A partir de ese momento ya no será necesario utilizar la terminal.
+
+Bastará con hacer doble clic sobre dicho acceso directo.
+
+### Si aparece un aviso de seguridad
+
+En algunas distribuciones Linux, la primera vez puede aparecer un aviso preguntando cómo desea abrir el archivo.
+
+Seleccione:
+
+**Ejecutar**
+
+Si el sistema pregunta si confía en el acceso directo, confirme la operación.
+
+Este aviso normalmente solo aparece la primera vez.
+
+## Actualizar los cuestionarios
+
+Para añadir nuevos cuestionarios basta con copiar los archivos `.json` dentro de la carpeta:
+
+```text
+Cuestionarios/
+```
+
+No es necesario reinstalar AulaQuiz.
+
+## Actualizar AulaQuiz
+
+Cuando publique una nueva versión únicamente será necesario sustituir la carpeta:
+
+```text
+Sistema/
+```
+
+Los cuestionarios y los resultados se conservarán automáticamente.
+
+---
+
+# 5. Uso
+
+## Añadir cuestionarios
+
+Copie los archivos `.json` dentro de:
+
+```text
+Cuestionarios/
+```
+
+## Iniciar una sesión
+
+1. Haga doble clic sobre **Iniciar AulaQuiz**.
+2. Se abrirán automáticamente las páginas del profesor y de la pantalla principal.
+3. El alumnado accederá escaneando el código QR.
+4. El profesorado seleccionará el cuestionario y pulsará **Comenzar**.
+
+## Durante el cuestionario
+
+El profesorado puede:
+
+- visualizar el alumnado conectado;
+- comprobar quién ha respondido;
+- avanzar manualmente a la siguiente pregunta;
+- consultar la puntuación en tiempo real.
+
+## Finalizar
+
+Al finalizar se generarán automáticamente los informes dentro de:
+
+```text
+Resultados/
 ```
 
 ---
 
-# Ejecutar
+# 6. Estructura de carpetas
 
-Iniciar el servidor:
-
-```bash
-node server.js
+```text
+AulaQuiz/
+│
+├── AulaQuiz
+├── Iniciar AulaQuiz.desktop
+├── Cuestionarios/
+├── Resultados/
+├── Manual.pdf
+└── Sistema/
 ```
 
-Aparecerá algo parecido a:
-
-```
-Alumno   : http://192.168.1.35:3000/alumno
-Profesor : http://192.168.1.35:3000/profesor
-Pantalla : http://192.168.1.35:3000/pantalla
-```
-
-También se mostrará un código QR en la terminal para acceder directamente desde los dispositivos de los alumnos.
+| Carpeta | Descripción |
+|----------|-------------|
+| AulaQuiz | Script de inicio |
+| Iniciar AulaQuiz.desktop | Acceso directo |
+| Cuestionarios | Archivos JSON |
+| Resultados | Informes generados |
+| Sistema | Archivos internos |
 
 ---
 
-# Crear cuestionarios
+# 7. Crear nuevos cuestionarios
 
-Los cuestionarios se guardan en:
+Los cuestionarios son archivos con extensión **.json**.
 
-```
-data/cuestionarios
-```
+No utilice LibreOffice Writer.
 
-Cada cuestionario es un archivo JSON.
+Utilice un editor de texto como:
 
-Ejemplo:
+- Pluma
+- Gedit
+- Visual Studio Code
+- Notepad++
+
+## Estructura básica
 
 ```json
 [
   {
-    "pregunta": "¿Capital de Francia?",
+    "pregunta": "¿Cuál es la capital de Francia?",
     "opciones": [
       "Madrid",
       "París",
@@ -136,53 +238,85 @@ Ejemplo:
 ]
 ```
 
+## Significado de los campos
+
+### pregunta
+
+Texto de la pregunta.
+
+### opciones
+
+Lista con las cuatro respuestas posibles.
+
+### correcta
+
+Indica la respuesta correcta.
+
+| Valor | Respuesta |
+|-------:|-----------|
+| 0 | A |
+| 1 | B |
+| 2 | C |
+| 3 | D |
+
+Por ejemplo:
+
+```json
+"correcta": 2
+```
+
+significa que la respuesta correcta es la tercera opción (C).
+
+## Varias preguntas
+
+```json
+[
+  {
+    "pregunta":"2 + 2 =",
+    "opciones":["3","4","5","6"],
+    "correcta":1
+  },
+  {
+    "pregunta":"5 × 5 =",
+    "opciones":["20","30","25","15"],
+    "correcta":2
+  }
+]
+```
+
 ---
 
-# Exportación
+# 8. Autoría y licencia
 
-Al finalizar una partida se crea automáticamente una carpeta en:
+**AulaQuiz**
 
-```
-data/resultados/
-```
+Desarrollado por **Jorge Lobo Martínez (Lobotic)**.
 
-Ejemplo:
+Se distribuye bajo la licencia **GNU General Public License v3.0 (GPL-3.0)**.
 
-```
-2026-07-06_20-30_Ciencias
-```
+Esta licencia permite:
 
-Dentro se generan:
+- utilizar el programa libremente;
+- estudiar su funcionamiento;
+- modificar el código fuente;
+- redistribuir copias;
+- distribuir versiones modificadas;
 
-### resumen.csv
+siempre que dichas versiones se publiquen también bajo licencia GPL-3.0.
 
-Resumen de calificaciones.
+Puede consultar el texto completo en:
 
-### resultados.csv
+- el archivo `LICENSE` incluido con AulaQuiz;
+- https://www.gnu.org/licenses/gpl-3.0.html
 
-Todas las respuestas de todos los alumnos.
+# Aviso legal
 
-### estadisticas.csv
+AulaQuiz se distribuye **tal cual** ("as is"), sin ningún tipo de garantía, expresa o implícita.
 
-Porcentaje de aciertos por pregunta.
+Aunque se ha probado su funcionamiento, el autor no garantiza que el programa esté libre de errores ni que sea adecuado para un propósito concreto.
 
-### informe.html
+El uso de AulaQuiz es responsabilidad exclusiva del usuario.
 
-Informe individual de cada alumno preparado para imprimir o guardar como PDF.
+El autor no se hace responsable de posibles pérdidas de datos, interrupciones del servicio, incompatibilidades con determinados equipos o cualquier otro perjuicio derivado del uso de la aplicación.
 
-Cada alumno comienza en una página independiente.
-
----
-
-# Requisitos
-
-- Node.js 18 o superior recomendado.
-- Todos los dispositivos deben estar conectados a la misma red local.
-
----
-
-
-# Licencia
-
-
- **GPL v3**.
+Se recomienda realizar copias de seguridad de los cuestionarios y de los resultados antes de realizar modificaciones o actualizaciones del programa.

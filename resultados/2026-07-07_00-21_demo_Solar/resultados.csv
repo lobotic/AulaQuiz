@@ -1,0 +1,6 @@
+Numero;Nombre;Pregunta;Enunciado;Respuesta;Correcta;Resultado
+1;pepe;1;"¿Qué planeta es el más cercano al Sol?";"Venus";"Mercurio";Incorrecta
+1;pepe;2;"¿Cuál es el planeta más grande del Sistema Solar?";"Saturno";"Júpiter";Incorrecta
+1;pepe;3;"¿Qué planeta es conocido como el planeta rojo?";"Marte";"Marte";Correcta
+1;pepe;4;"¿Qué planeta destaca por sus grandes anillos visibles?";"Urano";"Saturno";Incorrecta
+1;pepe;5;"¿Cuál es la estrella alrededor de la que giran los planetas del Sistema Solar?";"Polaris";"El Sol";Incorrecta

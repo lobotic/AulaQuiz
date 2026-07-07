@@ -1,0 +1,5 @@
+Numero;Nombre;Pregunta;Enunciado;Respuesta;Correcta;Resultado
+1;pepe;1;"¿Capital de España?";"";"Madrid";Incorrecta
+1;pepe;2;"¿2 + 2?";"";"4";Incorrecta
+3;l6y;1;"¿Capital de España?";"Madrid";"Madrid";Correcta
+3;l6y;2;"¿2 + 2?";"6";"4";Incorrecta

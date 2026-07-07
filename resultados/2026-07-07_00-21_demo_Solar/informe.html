@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+<link rel="icon" href="/assets/img/favicon.png">
+<meta charset="UTF-8">
+
+<title>Informe AulaQuiz by Lobotic</title>
+
+<style>
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    margin:20px;
+
+    color:black;
+
+    background:white;
+
+    font-size:12px;
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.cabecera{
+
+    border:2px solid black;
+
+    padding:10px;
+
+    margin-bottom:15px;
+
+}
+
+.cabecera h2{
+
+    margin:0 0 10px 0;
+
+}
+
+.resumen{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-weight:bold;
+
+}
+
+.preguntas{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+.tarjeta{
+
+    border:1px solid black;
+
+    padding:8px;
+
+    break-inside:avoid;
+
+}
+
+.tarjeta h3{
+
+    margin:0 0 6px 0;
+
+    font-size:14px;
+
+}
+
+.enunciado{
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+.opcion{
+
+    margin:2px 0;
+
+}
+
+.correcta{
+
+    font-weight:bold;
+
+}
+
+.salto{
+
+    page-break-after:always;
+
+}
+
+@media print{
+
+    body{
+
+        margin:10mm;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>AulaQuiz</h1>
+
+
+
+<div class="cabecera">
+
+<h2>1 - pepe</h2>
+
+<div class="resumen">
+
+<span>Cuestionario: demo_Solar</span>
+
+<span>Aciertos: 1/5</span>
+
+<span>Nota: 2</span>
+
+</div>
+
+</div>
+
+<div class="preguntas">
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 1
+
+</h3>
+
+<div class="enunciado">
+
+¿Qué planeta es el más cercano al Sol?
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+Mercurio
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☑
+
+Venus
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Tierra
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Marte
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 2
+
+</h3>
+
+<div class="enunciado">
+
+¿Cuál es el planeta más grande del Sistema Solar?
+
+</div>
+
+
+
+<div class="opcion ">
+
+☑
+
+Saturno
+
+
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+Júpiter
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Neptuno
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Urano
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✔
+
+Pregunta 3
+
+</h3>
+
+<div class="enunciado">
+
+¿Qué planeta es conocido como el planeta rojo?
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Venus
+
+
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☑
+
+Marte
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Mercurio
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Júpiter
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 4
+
+</h3>
+
+<div class="enunciado">
+
+¿Qué planeta destaca por sus grandes anillos visibles?
+
+</div>
+
+
+
+<div class="opcion ">
+
+☑
+
+Urano
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Neptuno
+
+
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+Saturno
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Marte
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 5
+
+</h3>
+
+<div class="enunciado">
+
+¿Cuál es la estrella alrededor de la que giran los planetas del Sistema Solar?
+
+</div>
+
+
+
+<div class="opcion ">
+
+☑
+
+Polaris
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Sirio
+
+
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+El Sol
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Alfa Centauri
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+<div style="margin-top:20px;font-size:13px;font-weight:bold;">
+
+Resumen
+
+<br><br>
+
+Aciertos: 1
+
+<br>
+
+Fallos: 4
+
+<br>
+
+Nota final: 2/10
+
+</div>
+
+<div class="salto"></div>
+
+
+
+</body>
+
+</html>
+

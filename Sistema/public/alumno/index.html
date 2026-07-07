@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<link rel="icon" href="/assets/img/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AQ-Alumno</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+
+<body>
+
+<div id="registro">
+
+    <header>
+
+    <img
+        src="/assets/img/logo.png"
+        id="logo"
+        alt="AulaQuiz">
+
+</header>
+
+    <h2>Acceso del alumnado</h2>
+
+    <input
+        id="numero"
+        type="number"
+        placeholder="Número de lista">
+
+    <input
+        id="nombre"
+        type="text"
+        placeholder="Nombre">
+
+    <button id="entrar">
+        Entrar
+    </button>
+
+    <p id="estado"></p>
+
+</div>
+
+
+<div id="juego" class="oculto">
+
+    <div class="tarjetaPregunta">
+
+        <h2 id="pregunta">
+            Esperando pregunta...
+        </h2>
+
+        <div id="opciones">
+
+            <div class="opcion">
+                <span class="letra">A</span>
+                <span id="opA"></span>
+            </div>
+
+            <div class="opcion">
+                <span class="letra">B</span>
+                <span id="opB"></span>
+            </div>
+
+            <div class="opcion">
+                <span class="letra">C</span>
+                <span id="opC"></span>
+            </div>
+
+            <div class="opcion">
+                <span class="letra">D</span>
+                <span id="opD"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="botonera">
+
+        <button class="respuesta" data-opcion="0">
+            A
+        </button>
+
+        <button class="respuesta" data-opcion="1">
+            B
+        </button>
+
+        <button class="respuesta" data-opcion="2">
+            C
+        </button>
+
+        <button class="respuesta" data-opcion="3">
+            D
+        </button>
+
+    </div>
+
+    <button id="enviar" disabled>
+        ENVIAR RESPUESTA
+    </button>
+
+    <p id="estadoJuego"></p>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

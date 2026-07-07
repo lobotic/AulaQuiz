@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Informe AulaQuiz by Lobotic</title>
+
+<style>
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    margin:20px;
+
+    color:black;
+
+    background:white;
+
+    font-size:12px;
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.cabecera{
+
+    border:2px solid black;
+
+    padding:10px;
+
+    margin-bottom:15px;
+
+}
+
+.cabecera h2{
+
+    margin:0 0 10px 0;
+
+}
+
+.resumen{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-weight:bold;
+
+}
+
+.preguntas{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+.tarjeta{
+
+    border:1px solid black;
+
+    padding:8px;
+
+    break-inside:avoid;
+
+}
+
+.tarjeta h3{
+
+    margin:0 0 6px 0;
+
+    font-size:14px;
+
+}
+
+.enunciado{
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+.opcion{
+
+    margin:2px 0;
+
+}
+
+.correcta{
+
+    font-weight:bold;
+
+}
+
+.salto{
+
+    page-break-after:always;
+
+}
+
+@media print{
+
+    body{
+
+        margin:10mm;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>AulaQuiz</h1>
+
+
+
+<div class="cabecera">
+
+<h2>1 - pepe</h2>
+
+<div class="resumen">
+
+<span>Cuestionario: demo</span>
+
+<span>Aciertos: 0/2</span>
+
+<span>Nota: 0</span>
+
+</div>
+
+</div>
+
+<div class="preguntas">
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 1
+
+</h3>
+
+<div class="enunciado">
+
+¿Capital de España?
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+Madrid
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Barcelona
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Valencia
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Sevilla
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 2
+
+</h3>
+
+<div class="enunciado">
+
+¿2 + 2?
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+3
+
+
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+4
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+5
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+6
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+<div style="margin-top:20px;font-size:13px;font-weight:bold;">
+
+Resumen
+
+<br><br>
+
+Aciertos: 0
+
+<br>
+
+Fallos: 2
+
+<br>
+
+Nota final: 0/10
+
+</div>
+
+<div class="salto"></div>
+
+
+
+<div class="cabecera">
+
+<h2>3 - l6y</h2>
+
+<div class="resumen">
+
+<span>Cuestionario: demo</span>
+
+<span>Aciertos: 1/2</span>
+
+<span>Nota: 5</span>
+
+</div>
+
+</div>
+
+<div class="preguntas">
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✔
+
+Pregunta 1
+
+</h3>
+
+<div class="enunciado">
+
+¿Capital de España?
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☑
+
+Madrid
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Barcelona
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Valencia
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+Sevilla
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<h3>
+
+✘
+
+Pregunta 2
+
+</h3>
+
+<div class="enunciado">
+
+¿2 + 2?
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+3
+
+
+
+</div>
+
+
+
+<div class="opcion correcta">
+
+☐
+
+4
+
+ ✔
+
+</div>
+
+
+
+<div class="opcion ">
+
+☐
+
+5
+
+
+
+</div>
+
+
+
+<div class="opcion ">
+
+☑
+
+6
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+<div style="margin-top:20px;font-size:13px;font-weight:bold;">
+
+Resumen
+
+<br><br>
+
+Aciertos: 1
+
+<br>
+
+Fallos: 1
+
+<br>
+
+Nota final: 5/10
+
+</div>
+
+<div class="salto"></div>
+
+
+
+</body>
+
+</html>
+

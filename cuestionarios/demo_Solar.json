@@ -1,0 +1,52 @@
+[
+  {
+    "pregunta": "¿Qué planeta es el más cercano al Sol?",
+    "opciones": [
+      "Mercurio",
+      "Venus",
+      "Tierra",
+      "Marte"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el planeta más grande del Sistema Solar?",
+    "opciones": [
+      "Saturno",
+      "Júpiter",
+      "Neptuno",
+      "Urano"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
+    "opciones": [
+      "Venus",
+      "Marte",
+      "Mercurio",
+      "Júpiter"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué planeta destaca por sus grandes anillos visibles?",
+    "opciones": [
+      "Urano",
+      "Neptuno",
+      "Saturno",
+      "Marte"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Cuál es la estrella alrededor de la que giran los planetas del Sistema Solar?",
+    "opciones": [
+      "Polaris",
+      "Sirio",
+      "El Sol",
+      "Alfa Centauri"
+    ],
+    "correcta": 2
+  }
+]

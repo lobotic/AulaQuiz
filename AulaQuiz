@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# ==========================================
+# AulaQuiz
+# ==========================================
+
+BASE="$(cd "$(dirname "$0")" && pwd)"
+
+cd "$BASE/Sistema"
+
+# Crear acceso directo si no existe
+if [ ! -f "$BASE/Iniciar AulaQuiz.desktop" ]; then
+
+cat > "$BASE/Iniciar AulaQuiz.desktop" << EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Iniciar AulaQuiz
+Comment=Servidor local para cuestionarios
+Exec=$BASE/AulaQuiz
+Path=$BASE/Sistema
+Icon=$BASE/Sistema/public/assets/img/favicon.png
+Terminal=true
+Categories=Education;
+EOF
+
+chmod +x "$BASE/Iniciar AulaQuiz.desktop"
+
+echo ""
+echo "===================================="
+echo "   AulaQuiz esta listo."
+echo ""
+echo "Se ha creado el acceso directo:"
+echo ""
+echo "   Iniciar AulaQuiz.desktop"
+echo ""
+echo "La proxima vez solo tendras que"
+echo "hacer doble clic sobre el."
+echo "===================================="
+echo ""
+
+fi
+
+# ==========================================
+# ¿Ya está ejecutándose?
+# ==========================================
+
+if pgrep -f "Sistema/node/bin/node server.js" >/dev/null; then
+
+    xdg-open http://localhost:3000/profesor
+    xdg-open http://localhost:3000/pantalla
+
+    exit 0
+
+fi
+
+# ==========================================
+# Arrancar servidor
+# ==========================================
+
+exec "$BASE/Sistema/node/bin/node" server.js

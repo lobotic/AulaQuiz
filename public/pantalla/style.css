@@ -2,25 +2,27 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
 
-    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
 
-    background:white;
-
-    color:black;
+    color:#111;
 
     height:100vh;
 
 }
 
-/* ========================= */
-/* ESPERA */
-/* ========================= */
+
+/* =========================
+   ESPERA
+========================= */
 
 #espera{
+
+    height:100vh;
 
     display:flex;
 
@@ -30,35 +32,11 @@ body{
 
     align-items:center;
 
-    height:100vh;
+    text-align:center;
 
 }
 
-#espera h1{
 
-    font-size:4rem;
-
-    margin-bottom:40px;
-
-}
-
-.qr{
-
-    width:55vmin;
-
-    max-width:650px;
-
-    height:auto;
-
-}
-
-#espera p{
-
-    margin-top:40px;
-
-    font-size:2rem;
-
-}
 #banner{
 
     width:40%;
@@ -67,29 +45,70 @@ body{
 
     height:auto;
 
-    display:block;
-
-    margin:40px auto;
+    margin-bottom:25px;
 
 }
 
-/* ========================= */
-/* JUEGO */
-/* ========================= */
+
+#espera p{
+
+    font-size:1.5rem;
+
+    color:#555;
+
+    margin-top:20px;
+
+}
+
+
+#espera .qr{
+
+    width:55vmin;
+
+    max-width:500px;
+
+    height:auto;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+}
+
+
+/* =========================
+   JUEGO
+========================= */
+
 
 #juego{
 
     display:flex;
 
+    gap:25px;
+
     height:100vh;
 
+    padding:30px;
+
 }
+
 
 #izquierda{
 
     flex:1;
 
-    padding:40px;
+    background:white;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    padding:35px;
 
     display:flex;
 
@@ -97,11 +116,16 @@ body{
 
 }
 
+
 #derecha{
 
     width:320px;
 
-    border-left:3px solid black;
+    background:white;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
 
     padding:25px;
 
@@ -109,23 +133,33 @@ body{
 
 }
 
+
+
 #numeroPregunta{
 
-    font-size:2rem;
+    font-size:1.5rem;
+
+    color:#555;
 
     margin-bottom:25px;
 
+    text-align:center;
+
 }
+
 
 #pregunta{
 
-    font-size:2.7rem;
+    font-size:2.4rem;
 
     font-weight:bold;
+
+    text-align:center;
 
     margin-bottom:35px;
 
 }
+
 
 #opciones{
 
@@ -133,9 +167,12 @@ body{
 
 }
 
+
 .opcion{
 
-    border:2px solid black;
+    background:#f2f2f2;
+
+    border:1px solid #ddd;
 
     border-radius:12px;
 
@@ -143,9 +180,11 @@ body{
 
     margin-bottom:18px;
 
-    font-size:2rem;
+    font-size:1.8rem;
 
 }
+
+
 
 #contador{
 
@@ -157,29 +196,44 @@ body{
 
     margin-top:20px;
 
+    color:#111;
+
 }
+
+
+
+/* =========================
+   ALUMNOS
+========================= */
+
 
 #derecha h3{
 
     text-align:center;
 
+    font-size:1.4rem;
+
     margin-bottom:20px;
 
 }
 
+
 .alumno{
 
-    padding:8px 0;
+    padding:12px 5px;
 
-    border-bottom:1px solid #ddd;
+    border-bottom:1px solid #eee;
 
-    font-size:1.2rem;
+    font-size:1.1rem;
 
 }
 
-/* ========================= */
-/* FIN */
-/* ========================= */
+
+
+/* =========================
+   FIN
+========================= */
+
 
 #fin{
 
@@ -193,7 +247,12 @@ body{
 
     align-items:center;
 
+    text-align:center;
+
+    background:#f5f5f5;
+
 }
+
 
 #fin h1{
 
@@ -201,18 +260,88 @@ body{
 
 }
 
+
 #fin h2{
 
-    font-size:3rem;
+    font-size:2.5rem;
 
     margin-top:30px;
 
 }
 
+
 #fin p{
 
-    font-size:2rem;
+    font-size:1.5rem;
+
+    color:#555;
 
     margin-top:20px;
+
+}
+
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+
+@media(max-width:900px){
+
+
+    #juego{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px;
+
+    }
+
+
+    #derecha{
+
+        width:100%;
+
+        max-height:250px;
+
+    }
+
+
+    #pregunta{
+
+        font-size:1.8rem;
+
+    }
+
+
+    .opcion{
+
+        font-size:1.3rem;
+
+    }
+
+
+    #contador{
+
+        font-size:3.5rem;
+
+    }
+
+
+    #banner{
+
+        width:70%;
+
+    }
+
+
+    #espera p{
+
+        font-size:1.2rem;
+
+    }
 
 }

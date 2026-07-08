@@ -125,3 +125,28 @@ siguiente.addEventListener("click", () => {
     socket.emit("siguientePregunta");
 
 });
+
+
+// =====================================
+// SALIR
+// =====================================
+
+document
+    .getElementById("btnSalir")
+    .addEventListener("click", () => {
+
+        if (
+
+            confirm(
+                "¿Desea cerrar AulaQuiz?"
+            )
+
+        ) {
+
+            socket.emit(
+                "cerrarServidor"
+            );
+
+        }
+
+    });

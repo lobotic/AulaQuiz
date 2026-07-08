@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>
+
+        AulaQuiz · Editor de cuestionarios
+
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/profesor/editor/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <img
+        id="logo"
+        src="/assets/img/logo.png"
+        alt="AulaQuiz">
+
+    <h1>
+
+        Editor de cuestionarios
+
+    </h1>
+
+    <p>
+
+        Cree nuevos cuestionarios para AulaQuiz de forma sencilla.
+
+    </p>
+
+</header>
+
+<main>
+
+    <label for="nombre">
+
+        Nombre del cuestionario
+
+    </label>
+
+    <input
+
+        id="nombre"
+
+        type="text"
+
+        placeholder="Ej.: Capitales de Europa">
+
+    <h2>
+
+        Preguntas
+        (<span id="totalPreguntas">0</span>)
+
+    </h2>
+
+    <section id="preguntas">
+
+    </section>
+
+    <div id="botones">
+
+        <button id="btnAñadir">
+
+            + Añadir pregunta
+
+        </button>
+
+        <button id="btnGuardar">
+
+            Guardar
+
+        </button>
+
+    </div>
+
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/profesor/editor/app.js"></script>
+
+</body>
+
+</html>

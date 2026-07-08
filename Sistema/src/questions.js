@@ -21,7 +21,6 @@ function listarCuestionarios() {
 
 }
 
-
 // ===============================
 // CARGAR CUESTIONARIO
 // ===============================
@@ -44,9 +43,45 @@ function cargarCuestionario(nombre) {
 
 }
 
+// ===============================
+// GUARDAR CUESTIONARIO
+// ===============================
+
+function guardarCuestionario(nombre, preguntas) {
+
+    if (!nombre || !nombre.trim()) {
+
+        throw new Error(
+            "El cuestionario debe tener un nombre."
+        );
+
+    }
+
+    const archivo = path.join(
+        carpeta,
+        nombre.replace(".json", "") + ".json"
+    );
+
+    fs.writeFileSync(
+
+        archivo,
+
+        JSON.stringify(
+            preguntas,
+            null,
+            4
+        ),
+
+        "utf8"
+
+    );
+
+}
+
 module.exports = {
 
     listarCuestionarios,
-    cargarCuestionario
+    cargarCuestionario,
+    guardarCuestionario
 
 };

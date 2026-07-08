@@ -15,14 +15,8 @@ function exportarPartida(game, jugadores) {
         String(ahora.getMinutes()).padStart(2, "0");
 
     const carpeta = path.join(
-
-        __dirname,
-
-        "..",
-
-        "data",
-
-        "resultados",
+    __dirname,
+    "../../resultados",
 
         `${fecha}_${game.cuestionarioSeleccionado}`
 

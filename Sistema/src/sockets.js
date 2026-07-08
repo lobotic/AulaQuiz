@@ -4,7 +4,8 @@ const exportar = require("./exportar");
 
 const {
     cargarCuestionario,
-    listarCuestionarios
+    listarCuestionarios,
+    guardarCuestionario
 } = require("./questions");
 
 function configurarSockets(io) {
@@ -12,6 +13,46 @@ function configurarSockets(io) {
     io.on("connection", (socket) => {
 
         console.log("🔌 Conectado:", socket.id);
+        
+// =====================================
+// GUARDAR CUESTIONARIO
+// =====================================
+
+socket.on("guardarCuestionario", ({ nombre, preguntas }) => {
+
+    try {
+
+        guardarCuestionario(
+            nombre,
+            preguntas
+        );
+
+        socket.emit(
+            "cuestionarioGuardado"
+        );
+
+        io.emit(
+            "listaCuestionarios",
+            listarCuestionarios()
+        );
+
+        console.log(
+            "💾 Cuestionario guardado:",
+            nombre
+        );
+
+    }
+
+    catch (error) {
+
+        socket.emit(
+            "error",
+            error.message
+        );
+
+    }
+
+});
 
         // =====================================
         // ESTADO INICIAL
@@ -226,6 +267,7 @@ function configurarSockets(io) {
     game.cuestionario.length
 );
 
+     
 // Exportar datos de la partida
 exportar.exportarPartida(
     game,
@@ -283,7 +325,24 @@ return;
 
         });
 
+   // =====================================
+// CERRAR SERVIDOR
+// =====================================
+
+socket.on("cerrarServidor", () => {
+
+    console.log(
+        "⏻ AulaQuiz finalizado."
+    );
+
+    process.exit(0);
+
+});
+   
     });
+
+
+
 
 }
 

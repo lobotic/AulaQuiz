@@ -18,7 +18,7 @@ configurarSockets(io);
 // STATIC (TODO público)
 app.use(express.static("public"));
 
-// RUTAS EXPLÍCITAS (SIN AMBIGÜEDAD)
+// RUTAS 
 app.get("/alumno", (req, res) => {
     res.sendFile(__dirname + "/public/alumno/index.html");
 });
@@ -35,6 +35,12 @@ app.get("/qr", (req, res) => {
     res.json({
         qr: qrAlumno
     });
+
+app.get("/editor", (req, res) => {
+    res.sendFile(
+        __dirname + "/public/profesor/editor/index.html"
+    );
+});
 });
 
 // IP
